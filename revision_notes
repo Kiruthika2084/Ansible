@@ -20,7 +20,7 @@ Web-servers:
 	Database servers:
 	 Login to DB -> module
 	 create a table -> module
-	 restart DB -> module                   ==========> play ++++++>>>> task  ))))))))))))))))))----> playbook
+	 restart DB -> module                   ==========> play ++++++>>>> task  ))))))))))))))))))set of plays----> playbook
 		
 All tasks in YAML are executed in sequential order
 		
