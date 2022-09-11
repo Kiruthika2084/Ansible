@@ -26,3 +26,5 @@ All tasks in YAML are executed in sequential order
 		
 ansible-playbook --syntax-check pb.yaml ---> syntax check
 ansible-playbook --check pb.yaml ---> dry-run
+
+Adhoc run : ansible localhost -m ping
