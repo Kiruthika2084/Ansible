@@ -39,4 +39,20 @@ Module to print something on the screen : debug
   - name : test
     debug: msg="hallo"
 ~            
+Run the playbook:
+-------------------
+ansible-playbook hallo.yaml
+
+
+Running multiple tasks:
+=========================
+
+- name: run multiple tasks
+  hosts: localhost
+
+  tasks:
+  - name: test
+    debug: msg="hallo"
+  - name: ping 
+    ping:
 
