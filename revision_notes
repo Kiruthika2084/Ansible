@@ -15,12 +15,12 @@ Web-servers:
 	Enable httpd -> module
 	start httpd -> module                   =========> play
 
- enable http port on furewall -> module  =========> play  +++++>>>>> task
+ enable http port on furewall -> module         =========> play  +++++>>>>> task
 	
 	Database servers:
 	 Login to DB -> module
-		create a table -> module
-		restart DB -> module                   ==========> play ++++++>>>> task  ))))))))))))))))))----> playbook
+	 create a table -> module
+	 restart DB -> module                   ==========> play ++++++>>>> task  ))))))))))))))))))----> playbook
 		
-		All tasks in YAML are executed in sequential order
+All tasks in YAML are executed in sequential order
 		
