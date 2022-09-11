@@ -56,3 +56,25 @@ Running multiple tasks:
   - name: ping 
     ping:
 
+Remote client hosts file syntax
+--------------------------------
+-All remote clients are considered inventory in Ansible
+-Ansible keeps its inventory info in host name named : /etc/ansible/hosts, if inventory location is kept different,
+ specify ansible-playbook -i inventory-location
+-The host file is created during ansible installation
+
+hosts are either identified by fqdn/ip
+Can use headers to group clients
+[db-servers]
+10.133.42.0
+10.132.23.0
+[app-servers]
+10.0.0.1
+
+Ansible has a default for all
+[all]
+10.0.0.1
+''
+''
+
+can use iprange 10.0.0.[11-14]
