@@ -158,3 +158,8 @@ setup : getting system info from remote clients
 ansible -m all setup
 
 ansible client1 -a "/sbin/reboot"
+
+Roles:
+----------
+-simplifies long playbooks by grouping tasks into smaller playbooks
+-easier to reuse
