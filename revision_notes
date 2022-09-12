@@ -149,4 +149,9 @@ Ansible adhoc commands
 
 ansible [target] -m [module] -a "[module-options]"
 
-
+example :  ansible localhost -m ping
+	   ansible all -m file -a "path=/path state=touch mode=700"
+	   ansible all -m file -a "path=/path state=absent"
+	   ansible all -m copy -a "src="" dest=""
+	   
+setup : getting system info from remote clients
