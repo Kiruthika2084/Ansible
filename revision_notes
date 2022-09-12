@@ -78,3 +78,11 @@ Ansible has a default for all
 ''
 
 can use iprange 10.0.0.[11-14]
+
+Establish connection to remote hosts
+-------------------------------------
+Generate SSH keys on the control nodes and copy it over to the clients for passwordless
+ssh-keygen
+ssh-copy-id 10.0.0.99 (root password of remote is required)
+
+ssh 10.0.0.99 -> success
