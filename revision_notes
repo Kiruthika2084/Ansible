@@ -27,6 +27,7 @@ All tasks in YAML are executed in sequential order
 ansible-playbook --syntax-check pb.yaml ---> syntax check
 ansible-playbook --check pb.yaml ---> dry-run
 
+
 --extra-vars -> to mention the extra variables
 
 Adhoc run : ansible localhost -m ping
@@ -138,3 +139,7 @@ Download package from URL
       ignore_errors: yes
       shell: "kill {{ item }}"
       with_items: "{{ running_process.stdout_lines }}"
+
+Start a playbook at a specific task
+---------------------------------------
+ansible-playbook yamlfile.yaml --start-at-task 'task name'
