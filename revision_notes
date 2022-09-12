@@ -155,3 +155,6 @@ example :  ansible localhost -m ping
 	   ansible all -m copy -a "src="" dest=""
 	   
 setup : getting system info from remote clients
+ansible -m all setup
+
+ansible client1 -a "/sbin/reboot"
