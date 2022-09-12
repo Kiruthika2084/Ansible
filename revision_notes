@@ -143,3 +143,10 @@ Download package from URL
 Start a playbook at a specific task
 ---------------------------------------
 ansible-playbook yamlfile.yaml --start-at-task 'task name'
+
+Ansible adhoc commands
+-------------------------
+
+ansible [target] -m [module] -a "[module-options]"
+
+
