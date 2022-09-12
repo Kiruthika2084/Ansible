@@ -88,3 +88,16 @@ ssh-keygen
 ssh-copy-id 10.0.0.99 (root password of remote is required)
 
 ssh 10.0.0.99 -> success
+
+Extra vars
+---------------
+tasks:
+- name: change password
+  user:
+     name: george
+     update_password: always
+     password: "{{ newpassword|password_hash }}"
+     
+ansible-playbook changepass.yml --extra-vars newpassword="@#jhdj"
+     
+
