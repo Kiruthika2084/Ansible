@@ -187,3 +187,64 @@ ansible-playbook playbook.yaml -t tag-name
 To list all tags
 ------------------
 ansible-playbook playbook.yaml --list-tags
+
+
+Variables
+---------------
+---
+- name: Package installation
+  hosts: all
+  vars:
+   pack: httpd 
+  
+  tasks:
+  - name: Install package
+    yum:
+     name: “{{ pack }}”
+     state: present
+
+  - name: Start service
+    service:
+     name: “{{ pack }}”
+     state: started
+     
+Variables in inventory file
+-----------------------------
+[abc:vars]
+fooserver=foo.abc.example.com
+ntpserver=ntp.abc.example.com
+
+server1 ansible_host=10.0.0.1
+server1 ansible_host=10.0.0.2
+
+Handlers
+----------------
+Handlers are executed at end of play once all tasks are finished.
+In Ansible, handlers are typically used to start, reload, restart and stop services.
+
+example: reload firewalld, before enabling http service.
+
+handlers are tasks that only run when notified
+---
+- name: Enable service on firewalld
+  hosts: localhost
+  tasks:
+
+- name: Open port for http
+  firewalld:
+   service: http
+   permanent: true
+   state: enabled
+  notify:
+  - Reload firewalld
+ 
+- name: Ensure firewalld is running
+    service:
+     name: firewalld
+     state: started
+
+handlers:
+  - name: Reload firewalld
+    service:
+     name: firewalld
+     state: reloaded
