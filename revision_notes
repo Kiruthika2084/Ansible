@@ -163,3 +163,27 @@ Roles:
 ----------
 -simplifies long playbooks by grouping tasks into smaller playbooks
 -easier to reuse
+-Roles are like templates which can be called by playbook
+
+to create roles
+/etc/ansible/roles -> create directories(role1,role2) -> create sub-directory(tasks) inside each directory -> main.yaml inside tasks folder
+
+Ansible-galaxy
+-----------------
+galaxy.ansible.com
+
+can download roles from here
+ansible-galaxy install xxxxx
+
+Tags
+----------
+Tags are references or aliases to the task
+tags: tag-name ( aligned with -name in yaml file)
+
+To run particular tag
+----------------------------
+ansible-playbook playbook.yaml -t tag-name
+
+To list all tags
+------------------
+ansible-playbook playbook.yaml --list-tags
