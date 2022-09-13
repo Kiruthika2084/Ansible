@@ -262,3 +262,36 @@ allow Ansible to take actions based on certain conditions
         name: apache2
 	state: present
      when ansible_os_family(builtin variable) = "ubuntu"
+     
+how to get these built in variables?
+
+variables are gathered from facts
+# ansible localhost -m setup
+
+Loops:
+-------------
+---
+- name: Install packages thru loop
+  hosts: localhost
+  vars:
+   packages: [ftp,telnet,htop)  
+
+  tasks:
+- name: Install package
+  yum
+    name: ‘{{items}}’
+    state: present
+  with_items: ‘{{packages}}’ -> no need with yum, otherwise required
+  
+ ---
+- name: Create users thru loop
+  hosts: localhost
+
+  tasks:
+- name: Create users
+  user:
+    name: ”{{ item }}””
+  loop:
+      - jerry
+      - kramer
+      - eliane
