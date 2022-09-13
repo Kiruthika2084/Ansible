@@ -241,7 +241,7 @@ handlers are tasks that only run when notified
 - name: Ensure firewalld is running
     service:
      name: firewalld
-     state: started
+     state: started  -----> handler will run after this
 
 handlers:
   - name: Reload firewalld
