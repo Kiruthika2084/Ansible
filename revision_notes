@@ -248,3 +248,17 @@ handlers:
     service:
      name: firewalld
      state: reloaded
+
+Conditions:
+-----------------
+allow Ansible to take actions based on certain conditions
+---
+- name: install httpd
+  hosts: localhost
+  
+  tasks:
+   - name: install apache
+     apt-get:
+        name: apache2
+	state: present
+     when ansible_os_family(builtin variable) = "ubuntu"
