@@ -295,3 +295,27 @@ Loops:
       - jerry
       - kramer
       - eliane
+---------------------------
+Ansible vault
+------------------
+
+Ansible vault feature password protect the code
+
+# ansible-vault create ansvault.yaml
+
+ansible-playbook ansvault.yaml --> error
+
+TO run
+ansible-playbook ansvault.yaml --ask-vault-pass
+
+TO view
+ansible-playbook view ansvault.yaml 
+
+TO edit
+ansible-playbook edit ansvault.yaml 
+
+To get list of options
+ansible-vault --help
+
+if existing file???
+ansible-playbook encrypt ansvault.yaml 
