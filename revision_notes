@@ -352,3 +352,10 @@ ansible-playbook ansvault.yaml --ask-vault-pass
 
 Ansible Management tools
 ------------------------------
+
+Additional commands
+-------------------
+ansible-config
+shows or modifies ansible configuration
+
+ansible-doc -l
