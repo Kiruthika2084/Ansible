@@ -1,1 +1,55 @@
+A jenkins pipeline is a collection of events/jobs interlinked with each other in a sequence
 
+Methods to create a pipeline
+------------------------------
+1) Using Build pipeline plugin 
+2) pipeline plugin -> entire pipeline as code
+
+Why use Jenkins pipeline?
+1)  Using Groovy OSL,it models easy to complex pipelines as code
+2)  Code is stored in jenkinsfile that can be scanned into SCM
+3)  Supports complex pipeline by adding conditional loops
+4)  Improves user experience by integrating user feedback
+
+Types of jenkins pipeline
+---------------------------
+Declarative pipeline - new concept 
+  - simpler and flexible groovy syntax 
+  - defined within pipeline block
+  - easier to read and write
+  - Declarative
+Scripted pipeline 
+    strict groovy based syntaxes 
+  - defined within node block
+  - Imperative
+ 
+Example:
+-------------
+  pipeline
+  {
+   agent any 
+   stages {
+     stage(build) {
+       steps{
+       sh 'echo "hello"'
+         }
+       }
+     }
+  }
+ Groovy Script
+ ==================
+ Install Java - atleast Java 7
+ Install groovy
+ 
+ .groovy is the extension
+ class groovytut{
+    static void main(string[] args){
+      println("hello");
+      }
+   }
+   
+ To run ,
+ groovy groovytut.groovy
+   
+ 
+ 
