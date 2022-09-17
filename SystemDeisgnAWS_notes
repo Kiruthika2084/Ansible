@@ -1,1 +1,52 @@
 
+Content : https://www.youtube.com/watch?v=h8NpIop9Lho
+
+System design on AWS
+---------------------
+
+Monolith - Single tiered application in which user interface and data access code are combined into a single proglem
+on a single platform
+
+Pros:
+Simple
+No overengineering
+single code base
+Resource efficient at small 
+
+Cons:
+Modularity is hard to enforce as app grows
+scaling is a challenge
+All or nothing deployment
+Slow to react to customer demand
+
+Can you use API with Monolith ? Yes
+
+Issue of scaling
+--------------------
+store-> get |
+            |
+store-> post| API Gateway/Load balancer --> Monolith(entry fn to check url/path and execute fn -> Database
+            |
+store-> del |
+
+
+If traffic for store-get increases, threshold of CPU reach the limit
+if monolith runs on EC2 and uses autoscaling, you would endup scaling the entire application
+
+With microservices, each codebase for get/post/del would run in a different EC2 machine, in different instant types
+
+can be written in different programming languages (this feature is called polyglot)
+each service can scale independently
+
+Independent
+-scaling 
+-governance
+-deployment
+-testing
+-functionality
+
+Microservices can run in EC2/Lambda(serverless)/EKS/ECS... can front it with ELB or API gateway
+--------
+
+
+           
