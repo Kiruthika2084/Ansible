@@ -48,5 +48,13 @@ Independent
 Microservices can run in EC2/Lambda(serverless)/EKS/ECS... can front it with ELB or API gateway
 --------
 
+In case of EKS
+
+Ingress ALB -> store(get/post/del) -> SERVICES for pods -> 3 different pods
+
+Can mix and match
+store->get ----> EKS
+store->post ---> EC2
+store->del ----> Lambda
 
            
