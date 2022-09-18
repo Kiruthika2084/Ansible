@@ -95,6 +95,72 @@ NLB
  API what and why?
  ------------------------
  
+ In hotel waiter acts as API, he takes order from you and gets the food from the kitchen
+ 
+ When applications are invoked by millions of users, lot of factors involved
+ like Traffic management, Load balancing , specific input/output needs, Auth(n/z) and many more
+ 
+ All these need not be implemented as program logic which would result in overhead
+ thats why we have this layer API gateway
+ 
+ So what is the difference between API and Application Load balancer??
+ 
+ API Gateway
+ -------------
+ Can implement rate limiting, bursting for APIs
+ integrate with WAF
+ Not able to get static IP for endpoint
+ Accepts HTTPS traffic
+ Able to do request validation, request/response mapping
+ Able to handle spiky traffic
+ Able to integrate with lambda in diff region and diff account
+ Pay per use
+ No health check 
+ Able to cache responces
+ 
+ 
+ Scaling - Vertical Vs Horizontal
+ ----------------------------------
+ Vertical - Scaling up/down takes longer
+ chances of missing txns during cutover
+ Limited scaling
+ Expensive
+ 
+ Horizontal
+ - Legacy code needs to be refactored for scaling
+ 
+ 
+ Lambda
+==
+ for each traffic, a new lambda gets spun up
+ rach lambda instance will have same memory allocated
+ 
+ Container-EKS
+ ==
+ HPA- Horizontal pod autoscaler
+ Cluster autoscaler (nodes)
+ 
+ How can you make your appln scalable for a big traffic day???
+ pre-warm load balancer
+ use scheduled scaling
+ lightweight AMI
+ use database proxy
+ Run IEM to ensure it can handle high traffic
+ 
+ Three-tier architecture
+ =====================================
+ Frontend/Backend/Database
+ 
+ Avoid single point of failure
+ HA,scalable
+ Network security(NACL,SG, WAF with LB)
+ 
+ Database
+ use aws native databases
+ Multi-AZ
+ Global database
+ Optimize(read replica, caching, query tuning)
+ 
  
    
 
