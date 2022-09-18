@@ -44,17 +44,62 @@ Independent
 -deployment
 -testing
 -functionality
+Not required to follow every characteristic
 
 Microservices can run in EC2/Lambda(serverless)/EKS/ECS... can front it with ELB or API gateway
 --------
 
 In case of EKS
 
-Ingress ALB -> store(get/post/del) -> SERVICES for pods -> 3 different pods
+Ingress ALB -> store(get/post/del) -> SERVICES for pods(A/B/C) -> 3 different pods
 
 Can mix and match
 store->get ----> EKS
 store->post ---> EC2
 store->del ----> Lambda
+
+Which one to choose?-> based on the requirement
+
+Load balancer
+=====================
+
+jar file in EC2 -> how will you invoke this application
+
+through IP?, what if application scales and has many IPS, how to discover?
+
+Load balancer automatically distribes across application
+each ELB will have DNS name
+it tracks the health of EC2
+
+what if app to be exposed to a website
+use ALB with route53
+
+
+www.store.com -> Route53(alias mapping) -> ALB DNS -> Application
+
+Types of Load balancer
+ALB -> path based routing to particular target groups, Layer7, validates and terminates SSL
+NLB -> based on protocol and port of incoming traffic, Layer4, SSL passthrough(TLS termination is possible)
+
+NLB
+-handles spiky traffic
+-exposes static IP address(ALB needs global accelerator)
+-influenced by choices
+   -> API Gateway REST API integration with NLB with privatelink
+   -> NLB supports EC2 and IP address as backend target group
+   -> ALB supports EC2,IP address and Lambda.
+   
+   
+ ===================\
+ 
+ API what and why?
+ ------------------------
+ 
+ 
+   
+
+
+
+
 
            
