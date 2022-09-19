@@ -1,16 +1,20 @@
-- Ansible : IT automation tool, open-source
+## Ansible : IT automation tool
+
+open-source
 
 Redhat Ansible tower ia a paid,GUI based tool to manage Ansible automation
+
 Ansible AWX -> open source free software
 
-@ Each specific task in ansible is written through modules
-@ Multiple modules are written in sequntial order
-@ Multiple modules for related tasks is called a play
-@ All plays together is called a playbook
-@ playbook is written in YAML
+- Each specific task in ansible is written through modules
+- Multiple modules are written in sequntial order
+- Multiple modules for related tasks is called a play
+- All plays together is called a playbook
+- playbook is written in YAML
 
 
 Web-servers:
+
 	Install httpd -> module
 	Enable httpd -> module
 	start httpd -> module                   =========> play
@@ -22,9 +26,10 @@ Web-servers:
 	 create a table -> module
 	 restart DB -> module                   ==========> play ++++++>>>> task  ))))))))))))))))))set of plays----> playbook
 		
-All tasks in YAML are executed in sequential order
+**All tasks in YAML are executed in sequential order
 		
 ansible-playbook --syntax-check pb.yaml ---> syntax check
+
 ansible-playbook --check pb.yaml ---> dry-run
 
 
