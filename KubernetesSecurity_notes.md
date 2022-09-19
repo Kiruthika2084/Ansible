@@ -31,6 +31,8 @@ ClusterRoles grant access to cluster specific resources
  $kubectl get clusterrole
  $kubectl describe clusterrole admin -> have access to all k8s resources
  
+![image](https://user-images.githubusercontent.com/81581601/191018041-cc5df832-2208-416c-81b4-60c8fc3a22a9.png)
+ 
 For your application, have limited accesses
 
 kind: ClusterRole , kind: ServiceAccount --> create both
