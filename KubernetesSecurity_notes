@@ -18,7 +18,32 @@ Need to abstract cloud specific construct in K8s construct
 say hello to service account
 
 ALB/EC2 policies-> attached to a role -> attached to a Service account -> attached to deployment manifest
+When SA is not used, default is assumed
+$kubectl get sa
 
-- ![image](https://user-images.githubusercontent.com/81581601/156093802-0ff739f1-3715-4f2a-929a-46aa16b3539d.png)
+Service account and Cluster
+--------------------------------
+IAM role is all about specific implementation(AWS in this case)
+Pods needs Kubernetes cluster access as well
+ClusterRoles grant access to cluster specific resources
+ - create/delete/List( Nodes, Pods, Namespaces) etc
+ 
+ $kubectl get clusterrole
+ $kubectl describe clusterrole admin -> have access to all k8s resources
+ 
+For your application, have limited accesses
+
+kind: ClusterRole , kind: ServiceAccount --> create both
+tie them both with ClusterRoleBinding
+
+kind:ClusterRoleBinding
+
+ClusterRole is reusable
+
+Role Vs ClusterRole
+---------------------
+Role is K8s role
+
+
 
 
