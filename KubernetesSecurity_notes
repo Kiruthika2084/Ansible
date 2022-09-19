@@ -19,5 +19,6 @@ say hello to service account
 
 ALB/EC2 policies-> attached to a role -> attached to a Service account -> attached to deployment manifest
 
+- ![image](https://user-images.githubusercontent.com/81581601/156093802-0ff739f1-3715-4f2a-929a-46aa16b3539d.png)
 
 
