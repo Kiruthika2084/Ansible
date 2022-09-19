@@ -1,1 +1,23 @@
+RBAC,IRSC, ClusterRoles, ClusterRole binding
+----------------------------------------------------
+
+POD needs access to AWS resources -either to create ALB
+or attach security group to your worker nodes(EC2)
+
+/
+IN place of POD , if it is an EC2 instance, how to have the same accesses?
+
+Attach a role which has required policies.
+/
+Similarly, can attach a role to POD, but pod life is not simple.
+So we need to deploy in deployment manifest
+
+Deployment is a kubernetes construct
+Need to abstract cloud specific construct in K8s construct
+ - enables k8s to run in multiple platform
+say hello to service account
+
+ALB/EC2 policies-> attached to a role -> attached to a Service account -> attached to deployment manifest
+
+
 
