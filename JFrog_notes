@@ -1,1 +1,41 @@
+What is an artifact?
+   The files that contain both the compiled code and the resources that are used to compile them 
+   are known as artifacts. They are readily deployable files.
+   
+   .jar, .war, .ear, .tar.gz(NPM) , .dll(.NET)
+
+source code-> bulid tool -> compilation -> Binary + Dependencies/resources-> Artifact
+
+An artifcact repository is one which stores multiple versions of artifacts.
+It is stored in a dedicated server for artifacts.
+
+If a deployment fails, instead of going to the previous commit and building again, its easier to get the previous version of artifact.
+
+Sources              Vs Binaries
+---------------------------------------
+Text                    Blob
+Diffable                Non Diffable
+Versioned by content    Versioned by name
+Stored by override      Not stored by override    
+
+
+What is JFrog Artifactory?
+
+a) Stores Articats
+b) Buffer for build tool for managing dependencies
+Bulid tool --asks for dependency-> JFROG Artifactory <--get dependencies from remote repo--> Remote repo
+    !                                 !
+Local server<--stores dependency in local repo 
+
+Why use JFrog repository?
+
+system stablility  and reliability with artifactory high availability
+Managing binaries across different environments
+security,access control and traceability
+Full support for docker
+quickly replicatory remote repos in local area
+Chef support
+
+
+
 
