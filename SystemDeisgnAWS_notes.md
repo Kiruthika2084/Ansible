@@ -161,7 +161,10 @@ NLB
  Global database
  Optimize(read replica, caching, query tuning)
  
- 
+ HA out of the box
+ ------------------
+ Lambda, Elastic load balancer
+ Pods, No , with pod topology spread contraints, spin up pods in different AZ.
    
 
 
